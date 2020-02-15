@@ -1,4 +1,4 @@
-gi t# kafka-quickstart project
+# kafka-quickstart project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -28,3 +28,16 @@ Or you can use Docker to build the native executable using: `./mvnw package -Pna
 You can then execute your binary: `./target/kafka-quickstart-1.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image-guide .
+
+### Additional commands:
+
+Starting kafka
+
+```
+cd /Users/ideltuva/workspace/kafka/kafka_2.12-2.1.1
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties --override listeners=PLAINTEXT://0.0.0.0:9092 --override advertised.listeners=PLAINTEXT://localhost:9092
+```
+
+Topic creation could be run via `create_topic.sh`
